@@ -3,7 +3,7 @@ name := "jerkson"
 
 organization := "org.cphylabs"
 
-version := "0.6.4-SNAPSHOT"
+version := "0.0.1-SNAPSHOT"
 
 licenses := Seq(
   ("The MIT License", url("http://codahale.com/mit.txt"))
