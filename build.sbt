@@ -83,11 +83,14 @@ publishMavenStyle := true
 
 publishTo <<= version { (v: String) =>
   val nexus = "https://oss.sonatype.org/"
+  val cphy = "https://cloudphysics.artifactoryonline.com/cloudphysics/"
   if (v.trim.endsWith("SNAPSHOT")) Some(
-    "snapshots" at nexus + "content/repositories/snapshots"
+    "cphy snapshots" at cphy + "oss-snapshots-local"
   )
-  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+  else Some("releases" at cphy + "service/local/staging/deploy/maven2")
 }
+
+credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
 
 publishArtifact in Test := false
 
